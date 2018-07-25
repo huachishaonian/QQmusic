@@ -1,6 +1,6 @@
 <template>
    <div class="singer" ref="singer">
-     <Listview :data="singers" @select="selectSinger"></Listview>
+     <Listview :data="singers" @select="selectSinger" ref="list"></Listview>
      <router-view></router-view>   
     </div> 
 </template>
@@ -25,7 +25,7 @@ export default {
     methods: {
         selectSinger(singer){
             this.$router.push({
-                path: "/singer/${singer.id}"
+                path: `/singer/${singer.id}`
             })
             this.setSinger(singer)
             
