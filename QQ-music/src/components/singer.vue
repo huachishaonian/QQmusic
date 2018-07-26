@@ -1,6 +1,6 @@
 <template>
    <div class="singer" ref="singer">
-     <Listview :data="singers" @select="selectSinger" ref="list"></Listview>
+     <list-view :data="singers" @select="selectSinger" ref="list"></list-view>
      <router-view></router-view>   
     </div> 
 </template>
@@ -8,7 +8,7 @@
 import {getSinger} from '../common/singer' 
 import {ERR_OK} from '../common/config'
 import Singer from '../common/singerData'
-import Listview from '../base/listview'
+import ListView from '../base/listview'
 import {mapMutations} from 'vuex'
 const HOT_NAME = '热门'
 const HOT_SINGER_LEN = 10
@@ -84,7 +84,7 @@ export default {
       })
     },
     components: {
-        Listview
+        ListView
     }
 }
 </script>
